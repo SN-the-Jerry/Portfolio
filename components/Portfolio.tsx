@@ -221,8 +221,7 @@ export default function Portfolio(): JSX.Element {
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
             <div className="text-2xl font-light tracking-wide group cursor-pointer" onClick={() => scrollToSection('#hero')}>
-              <span className="font-extralight text-slate-400 group-hover:text-slate-300 transition-colors duration-300">Myat</span>
-              <span className="font-medium bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent ml-2 group-hover:from-cyan-400 group-hover:to-blue-400 transition-all duration-300">Pan</span>
+              <span className="font-medium bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent ml-2 group-hover:from-cyan-400 group-hover:to-blue-400 transition-all duration-300">Myat Pan Pwint Soe Nyunt</span>
             </div>
             
             {/* Desktop Navigation */}
