@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Github, Mail, Phone, MapPin, ExternalLink, Code, Database, Globe, Smartphone, ArrowRight, Sparkles, Menu, X, ChevronUp, Download } from 'lucide-react';
 
@@ -28,7 +28,7 @@ interface VisibilityState {
   [key: string]: boolean;
 }
 
-export default function Portfolio(): JSX.Element {
+export default function Portfolio() {
   const [activeSection, setActiveSection] = useState<string>('hero');
   const [isVisible, setIsVisible] = useState<VisibilityState>({});
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -138,7 +138,7 @@ export default function Portfolio(): JSX.Element {
     { name: 'Contact', href: '#contact', icon: '📞' }
   ];
 
-  const getSkillIcon = (category: keyof Skills): JSX.Element => {
+  const getSkillIcon = (category: keyof Skills) => {
     switch (category) {
       case 'programming':
         return <Code className="w-6 h-6 text-white" />;
@@ -301,7 +301,7 @@ export default function Portfolio(): JSX.Element {
             
             <div className="space-y-4 mb-12">
               <p className="text-xl md:text-2xl font-light text-slate-200 tracking-wide animate-fadeInUp">
-                Full Stack Developer & Technology Enthusiast
+                Technology Enthusiast
               </p>
               <p className="text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed font-light animate-fadeInUp delay-200">
                 Crafting digital experiences with modern technologies. 
