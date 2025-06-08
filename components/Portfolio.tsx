@@ -10,6 +10,11 @@ interface Experience {
   period: string;
   description: string;
   technologies: string[];
+  links?: {
+    github?: string;
+    demo?: string;
+    website?: string;
+  };
 }
 
 interface Skills {
@@ -79,9 +84,9 @@ export default function Portfolio(): JSX.Element {
 
   const skills: Skills = {
     programming: ['HTML', 'CSS', 'Bootstrap', 'C#.net (Unity)', 'JavaScript', 'React', 'Next.js', 'TypeScript', 'Git'],
-    software: ['Google Tag Manager', 'GAM', 'Meta Business Suite', 'Microsoft Clarity', 'Seo Tools'],
+    software: ['Google Tag Manager', 'GA4', 'Meta Business Suite', 'Microsoft Clarity', 'Seo Tools'],
     design: ['Figma', 'Blender', 'Canva', 'Adobe', 'CapStudio Paint'],
-    languages: ['English', 'Thai (Basic)']
+    languages: ['Burmese (Native)','English', 'Thai (Basic)']
   };
 
   const experiences: Experience[] = [
@@ -89,36 +94,38 @@ export default function Portfolio(): JSX.Element {
       title: "Education Website Internship",
       company: "Admin Uniclass.co.th",
       period: "Recent",
-      description: "Full stack end-to-end development of educational learning platform using JavaScript, React, and Next.js framework, delivering enhanced user experience for online education",
-      technologies: ["JavaScript", "React", "Next.js", "Full Stack Development"]
-    },
-    {
-      title: "Multi-platform Analytics Developer",
-      company: "Integrated Project",
-      period: "Recent",
-      description: "Integrated multi-platform analytics (GTM, GA4, Meta Business Suite, Microsoft Clarity) and SEO optimization tools to track user behavior and improve conversion rates for start-up company",
-      technologies: ["GTM", "GA4", "Meta Business Suite", "Microsoft Clarity", "SEO"]
+      description: "Full stack end-to-end development of educational learning platform using JavaScript, React, and Next.js framework,Integrated multi-platform analytics (GTM, GA4, Meta Business Suite, Microsoft Clarity) and SEO optimization tools to track user behavior and improve conversion rates for educational start-up company",
+      technologies: ["JavaScript", "React", "Next.js","GTM", "GA4", "Meta Business Suite", "Microsoft Clarity", "SEO"],
+      links: {
+        website: "https://unicoach.cc"
+      }
     },
     {
       title: "AI Chatbot Developer",
-      company: "AI Chat University Project",
+      company: "University Project",
       period: "Academic Project",
       description: "Built end-to-end AI chatbot solution integrating frontend interface (HTML/CSS/JS) with backend API using Python Flask and OpenAI GPT API",
-      technologies: ["Python", "Flask", "OpenAI GPT", "HTML/CSS/JS"]
+      technologies: ["Python", "Flask", "OpenAI GPT", "HTML/CSS/JS"],
+      links: {
+        github: "https://github.com/SN-the-Jerry/RIC-FAQ-ChatBot-.git",
+      }
     },
     {
-      title: "Game Developer",
-      company: "Chaotic World (Global Game Jam)",
+      title: "Chaotic World ",
+      company: "(Global Game Jam)",
       period: "Game Jam",
       description: "Collaborated with cross-functional team to develop 'Chaotic World,' a 2D action game using C# and Unity engine during 48-hour Global Game Jam",
-      technologies: ["C#", "Unity", "Game Development", "2D Graphics"]
+      technologies: ["C#", "Unity", "Game Development", "2D Graphics"],
+      links: {
+        github: "https://github.com/SN-the-Jerry/Chaotic-Squirrel.git",
+      }
     },
     {
-      title: "Full Stack Developer",
-      company: "RO Peer Rating System",
+      title: "RO Peer Rating System (Research)",
+      company: "Rangsit University Project",
       period: "Co-op Internship",
-      description: "Developed comprehensive Peer Rating System improving employee feedback mechanisms and workplace satisfaction metrics",
-      technologies: ["Full Stack", "Peer Rating System", "Employee Feedback"]
+      description: "Developed comprehensive Peer Rating System improving employee feedback mechanisms and workplace satisfaction metrics, team-collaboration",
+      technologies: ["Peer Rating System", "Employee Feedback"],
     }
   ];
 
@@ -361,7 +368,7 @@ export default function Portfolio(): JSX.Element {
                 </div>
                 
                 <div className="flex flex-wrap gap-3">
-                  {['React', 'Next.js', 'TypeScript', 'Python', 'Unity', 'AI/ML'].map((tech, index) => (
+                  {['React', 'Next.js', 'TypeScript', 'Python', 'Unity'].map((tech, index) => (
                     <span
                       key={tech}
                       className={`bg-gradient-to-r from-blue-900/50 to-cyan-900/50 text-blue-300 px-4 py-2 rounded-full text-sm font-medium border border-blue-400/30 hover:shadow-md hover:scale-105 transition-all duration-300 ${isVisible.about ? 'animate-fadeInUp' : 'opacity-0'}`}
@@ -445,7 +452,7 @@ export default function Portfolio(): JSX.Element {
                     </span>
                   </div>
                   <p className="text-slate-300 mb-4 leading-relaxed font-light">{exp.description}</p>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 mb-4">
                     {exp.technologies.map((tech: string, techIndex: number) => (
                       <span
                         key={techIndex}
@@ -455,6 +462,48 @@ export default function Portfolio(): JSX.Element {
                       </span>
                     ))}
                   </div>
+                  
+                  {/* Project Links */}
+                  {exp.links && (
+                    <div className="flex flex-wrap gap-3 pt-2">
+                      {exp.links.github && (
+                        <a
+                          href={exp.links.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center space-x-2 bg-slate-700/50 hover:bg-slate-600/50 text-slate-300 hover:text-white px-4 py-2 rounded-lg text-sm font-medium border border-slate-600/50 hover:border-blue-400/50 transition-all duration-300 hover:scale-105"
+                        >
+                          <span>💻</span>
+                          <span>GitHub</span>
+                          <ExternalLink className="w-3 h-3" />
+                        </a>
+                      )}
+                      {exp.links.demo && (
+                        <a
+                          href={exp.links.demo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center space-x-2 bg-blue-600/50 hover:bg-blue-500/50 text-slate-300 hover:text-white px-4 py-2 rounded-lg text-sm font-medium border border-blue-400/50 hover:border-blue-300/50 transition-all duration-300 hover:scale-105"
+                        >
+                          <span>🚀</span>
+                          <span>Live Demo</span>
+                          <ExternalLink className="w-3 h-3" />
+                        </a>
+                      )}
+                      {exp.links.website && (
+                        <a
+                          href={exp.links.website}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center space-x-2 bg-cyan-600/50 hover:bg-cyan-500/50 text-slate-300 hover:text-white px-4 py-2 rounded-lg text-sm font-medium border border-cyan-400/50 hover:border-cyan-300/50 transition-all duration-300 hover:scale-105"
+                        >
+                          <span>🌐</span>
+                          <span>Website</span>
+                          <ExternalLink className="w-3 h-3" />
+                        </a>
+                      )}
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -574,7 +623,7 @@ export default function Portfolio(): JSX.Element {
                 
                 <div className="space-y-6">
                   {[
-                    { href: 'tel:+66-65-249-1015', icon: Phone, label: 'Phone', value: '+66-65-249-1015' },
+                    { href: 'tel:+66-69-149-1913', icon: Phone, label: 'Phone', value: '+66-69-149-1913' },
                     { href: 'mailto:pamelanyunt@gmail.com', icon: Mail, label: 'Email', value: 'pamelanyunt@gmail.com' },
                     { href: 'https://github.com/SN-the-Jerry', icon: Github, label: 'GitHub', value: 'SN-the-Jerry' }
                   ].map((contact, index) => (
