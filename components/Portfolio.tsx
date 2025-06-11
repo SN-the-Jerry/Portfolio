@@ -246,11 +246,11 @@ export default function Portfolio() {
                 </button>
               ))}
               
-              {/* Download Resume Button */}
+              {/* Download Resume Button
               <button className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-6 py-2 rounded-full font-medium hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105 flex items-center space-x-2">
                 <Download className="w-4 h-4" />
                 <span>Resume</span>
-              </button>
+              </button> */}
             </div>
 
             {/* Mobile Menu Button */}
