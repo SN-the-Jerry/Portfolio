@@ -14,6 +14,7 @@ interface Experience {
     github?: string;
     demo?: string;
     website?: string;
+    androidApk?: string;
   };
 }
 
@@ -83,23 +84,46 @@ export default function Portfolio() {
   }, []);
 
   const skills: Skills = {
-    programming: ['HTML', 'CSS', 'Bootstrap', 'C#.net (Unity)', 'JavaScript', 'React', 'Next.js', 'TypeScript', 'Git'],
-    software: ['Google Tag Manager', 'GA4', 'Meta Business Suite', 'Microsoft Clarity', 'Seo Tools'],
+    programming: ['HTML', 'CSS', 'Bootstrap', 'C#.net (Unity)', 'JavaScript', 'Dart', 'Next.js', 'TypeScript', 'Git', 'WordPress'],
+    software: ['Google Tag Manager', 'GA4', 'Meta Business Suite', 'Microsoft Clarity'],
     design: ['Figma', 'Blender', 'Canva', 'Adobe', 'CapStudio Paint'],
     languages: ['Burmese (Native)','English', 'Thai (Basic)']
   };
 
   const experiences: Experience[] = [
     {
+      title: "Flood Navi: Disaster Response Mobile Application",
+      company: "China-ASEAN Digital Innovation Quest",
+      period: "24-27 Oct 2025",
+      description: "Focused on leveraging artificial intelligence, community data, and offline-first mobile design to improve flood preparedness, response, and resilience. Currently available android platform with plans for iOS release.",
+      technologies: ["Flutter", "Dart", "Open Weather API", "Google Maps API"],
+      links: {
+        androidApk: "https://drive.google.com/file/d/1UZVSce01EbLTP4RTMG7h8hFDjnWEZA-g/view"
+      }
+    },
+
+    {
+      title: "Wordpress Editor Internship",
+      company: "Bangkok Riviera Co., Ltd",
+      period: "July-Nov 2025",
+      description: "Built and optimized landing pages using Avada while managing WordPress updates, plugins, and media libraries to standardize templates",
+      technologies: ["WordPress", "Avada", "Html","CSS"],
+      links: {
+        website: "https://www.navikacruise.com/"
+      }
+    },
+
+    {
       title: "Education Website Internship",
       company: "Admin Uniclass.co.th",
-      period: "Recent",
+      period: "Feb-June 2025",
       description: "Full stack end-to-end development of educational learning platform using JavaScript, React, and Next.js framework,Integrated multi-platform analytics (GTM, GA4, Meta Business Suite, Microsoft Clarity) and SEO optimization tools to track user behavior and improve conversion rates for educational start-up company",
       technologies: ["JavaScript", "React", "Next.js","GTM", "GA4", "Meta Business Suite", "Microsoft Clarity", "SEO"],
       links: {
         website: "https://unicoach.cc"
       }
     },
+
     {
       title: "AI Chatbot Developer",
       company: "University Project",
@@ -367,7 +391,7 @@ export default function Portfolio() {
                 </div>
                 
                 <div className="flex flex-wrap gap-3">
-                  {['React', 'Next.js', 'TypeScript', 'Python', 'Unity'].map((tech, index) => (
+                  {['Dart', 'Next.js', 'TypeScript', 'Python', 'Unity'].map((tech, index) => (
                     <span
                       key={tech}
                       className={`bg-gradient-to-r from-blue-900/50 to-cyan-900/50 text-blue-300 px-4 py-2 rounded-full text-sm font-medium border border-blue-400/30 hover:shadow-md hover:scale-105 transition-all duration-300 ${isVisible.about ? 'animate-fadeInUp' : 'opacity-0'}`}
@@ -501,6 +525,18 @@ export default function Portfolio() {
                           <ExternalLink className="w-3 h-3" />
                         </a>
                       )}
+                      {exp.links.androidApk && (
+                        <a
+                          href={exp.links.androidApk}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center space-x-2 bg-green-600/50 hover:bg-green-500/50 text-slate-300 hover:text-white px-4 py-2 rounded-lg text-sm font-medium border border-green-400/50 hover:border-green-300/50 transition-all duration-300 hover:scale-105"
+                        >
+                          <span>📱</span>
+                          <span>Android APK</span>
+                          <ExternalLink className="w-3 h-3" />
+                        </a>
+                      )}
                     </div>
                   )}
                 </div>
@@ -532,7 +568,7 @@ export default function Portfolio() {
                     <h3 className="text-2xl font-medium text-slate-100 mb-2 group-hover:text-blue-400 transition-colors duration-300">Bachelor of Science</h3>
                     <p className="text-xl text-blue-400 font-medium mb-4">Information and Communication Technology</p>
                     <p className="text-slate-300 font-light mb-2">Rangsit International College</p>
-                    <p className="text-slate-400 mb-4">June 2022 - Present</p>
+                    <p className="text-slate-400 mb-4">June 2022 - 2026</p>
                     <div className="bg-gradient-to-r from-blue-900/50 to-cyan-900/50 px-4 py-2 rounded-full inline-block group-hover:shadow-md transition-all duration-300">
                       <span className="text-blue-300 font-medium text-sm">Major: Information & Communication Technology</span>
                     </div>
@@ -554,7 +590,7 @@ export default function Portfolio() {
                 <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent ml-3">Skills</span>
               </h2>
               <div className="w-20 h-1 bg-gradient-to-r from-blue-400 to-cyan-400 mx-auto rounded-full animate-pulse"></div>
-              <p className="text-slate-300 mt-4 font-light">Technologies I work with daily</p>
+              <p className="text-slate-300 mt-4 font-light">Technologies I work</p>
             </div>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -650,7 +686,7 @@ export default function Portfolio() {
                     </div>
                     <div>
                       <p className="font-medium">Location</p>
-                      <p className="text-slate-400 font-light">Pathum Thani, Thailand</p>
+                      <p className="text-slate-400 font-light">Nonthaburi, Thailand</p>
                     </div>
                   </div>
                 </div>
