@@ -91,6 +91,29 @@ export default function Portfolio() {
   };
 
   const experiences: Experience[] = [
+
+      {
+      title: "RocketBoy Website",
+      company: "Yes WebDesign Studio",
+      period: "Freelance",
+      description: "Cutom theme, Saras , using square payment gateway, woocommerce,",
+      technologies: ["Wordpress","Elementor","PHP", "HTML/CSS/JS"],
+      links: {
+        website: "https://rocketboyaustralia.com.au/?",
+      }
+    },
+
+      {
+      title: "Myint Myint Khin Traditional Snack Website",
+      company: "Yes WebDesign Studio",
+      period: "Freelance",
+      description: "Elementor, MMQR payment gateway, woocommerce,",
+      technologies: ["Wordpress","Elementor","PHP", "HTML/CSS/JS"],
+      links: {
+        website: "https://myintmyintkhin.com/",
+      }
+    },
+
     {
       title: "Flood Navi: Disaster Response Mobile Application",
       company: "China-ASEAN Digital Innovation Quest",
@@ -124,16 +147,16 @@ export default function Portfolio() {
       }
     },
 
-    {
-      title: "AI Chatbot Developer",
-      company: "University Project",
-      period: "Academic Project",
-      description: "Built end-to-end AI chatbot solution integrating frontend interface (HTML/CSS/JS) with backend API using Python Flask and OpenAI GPT API",
-      technologies: ["Python", "Flask", "OpenAI GPT", "HTML/CSS/JS"],
+    /*{
+      title: "RocketBoy Website",
+      company: "Yes WebDesign Studio",
+      period: "Freelance",
+      description: "Cutom theme, Saras , using square payment gateway, woocommerce,",
+      technologies: ["Wordpress","Elementor","PHP", "HTML/CSS/JS"],
       links: {
-        github: "https://github.com/SN-the-Jerry/RIC-FAQ-ChatBot-.git",
+        website: "https://rocketboyaustralia.com.au/?",
       }
-    },
+    },*/
     {
       title: "Chaotic World ",
       company: "(Global Game Jam)",
